@@ -1,101 +1,237 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蔡杭 · 个人简历网站</title>
+
+<!-- 字体 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* 变量配色 */
+:root {
+  --bg-light: #f7f8fc;
+  --deep: #1d2366;
+  --accent: #8a65db;
+  --card-bg: #ffffff;
+  --text-dark: #2c2c2c;
+  --tag-bg: #eef0fa;
+  --tag-hover: #dcd7f8;
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+}
+
+/* 导航 */
+nav {
+  position: sticky;
+  top: 0;
+  background: var(--deep);
+  padding: 12px 0;
+  text-align: center;
+  z-index: 10;
+}
+nav a {
+  margin: 0 14px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: var(--accent);
+}
+
+/* 主履历封面 */
+.hero {
+  background: linear-gradient(135deg, #bfa2ff, #88a7ff);
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+.hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+}
+.hero p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.hero .btn {
+  margin-top: 22px;
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.4s;
+}
+.btn-white {
+  background: white;
+  color: var(--deep);
+}
+.btn-white:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* 核心能力 */
+.section-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 36px auto;
+  max-width: 900px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.tag {
+  display: inline-block;
+  background: var(--tag-bg);
+  margin: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.tag:hover {
+  background: var(--tag-hover);
+}
+
+/* 网格作品集 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 22px;
+  margin-top: 20px;
+}
+.portfolio-item {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.portfolio-item:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.12);
+}
+.portfolio-item p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* 联系 */
+.contact {
+  text-align: center;
+  padding: 50px 15px;
+  background: #ececff;
+}
+
+/* Footer */
+footer {
+  background: var(--deep);
+  color: #ccc;
+  text-align: center;
+  padding: 16px;
+  margin-top: 30px;
+}
+</style>
+
 </head>
 <body>
 
-<pre>
-+-----------------------------------------------------------------------+
-| 【导航栏 - 固定置顶】                                                 |
-| 首页 | 关于我 | 核心能力 | 实习经历 | 校园经历 | 作品集 | 联系我      |
-+-----------------------------------------------------------------------+
+<!-- 导航 -->
+<nav>
+  <a href="#hero">首页</a>
+  <a href="#skills">核心能力</a>
+  <a href="#experience">实习经历</a>
+  <a href="#portfolio">作品集</a>
+  <a href="#contact">联系我</a>
+</nav>
 
-+-----------------------------------------------------------------------+
-| 【首页 - 首屏 Hero】                                                  |
-|                                                                       |
-|                        蔡杭 · 个人求职官网                             |
-|            新媒体运营 | 海外市场营销 | 内容运营 | 品牌推广             |
-|                                                                       |
-|                    [ 查看作品集 ]  [ 下载简历PDF ]                    |
-|                                                                       |
-+-----------------------------------------------------------------------+
+<!-- 封面（履历专辑风格） -->
+<section id="hero" class="hero">
+  <h1>履历专辑：蔡杭 · Content & Marketing</h1>
+  <p>新媒体运营 · 海外市场 · 内容运营 · 品牌推广</p>
+  <p>官媒推文 60+ ｜ 阅读破 10,000+ ｜ 作品 100+ ｜ GMV 单场 100万+</p>
 
-+-----------------------------------------------------------------------+
-| 【关于我】                                                            |
-| 姓名：蔡杭          出生：2002.12.25        政治面貌：中共党员         |
-| 电话/微信：18948374802        邮箱：24hcai@stu.edu.cn                 |
-| 学历：新闻与传播硕士在读 | 商务英语本科                              |
-| 定位：双语内容 | 新媒体全流程 | 摄影摄像 | 文案策划 | 海外推广        |
-+-----------------------------------------------------------------------+
+  <a href="#portfolio" class="btn btn-white">查看作品集</a>
+  <a href="简历.pdf" class="btn btn-white" download>下载完整简历</a>
+</section>
 
-+-----------------------------------------------------------------------+
-| 【核心能力 - 置顶展示】                                               |
-| 内容运营：公众号/微博/抖音全平台运营、推文策划、热点捕捉              |
-| 文案创作：新闻稿、采访稿、软文、双语内容、学术文章                    |
-| 视觉制作：相机拍摄、PS/PR/剪映、海报设计、视频成片                     |
-| 语言能力：专四专八、四六级、普通话二甲、中英双语                      |
-| 工具技能：秀米、135、Canva、WPS、无人机、独立站搭建                   |
-| 数据成果：统筹推文60+篇、1w+阅读25篇、作品总量100+                     |
-+-----------------------------------------------------------------------+
+<!-- 核心能力 -->
+<section id="skills" class="section-card">
+  <h2>核心能力</h2>
+  <div>
+    <span class="tag">内容运营</span>
+    <span class="tag">文案创作</span>
+    <span class="tag">视觉设计</span>
+    <span class="tag">双语能力</span>
+    <span class="tag">视频剪辑</span>
+    <span class="tag">数据成果</span>
+  </div>
+</section>
 
-+-----------------------------------------------------------------------+
-| 【实习经历 - 顺序：华大 → 海联 → 日报社】                             |
-| ① 深圳华大基因 | 市场营销与品牌推广 | 2025.06-2026.02                 |
-|   - 商品详情页优化、卖点提炼、提升转化                               |
-|   - 新品海外宣发、英文素材整理                                       |
-|   - 电商图文/短视频制作、多渠道投放                                   |
-|   - 5000+人社群运营、SOP搭建、数据迭代                               |
-|   - 618/双11助播，单场GMV 100万+                                     |
-|                                                                       |
-| ② 揭阳海联五金 | 综合内容运营 | 2026.02-2026.04                      |
-|   - 产品拍摄、企业宣传片制作                                         |
-|   - 海外独立站设计、商城功能规划                                     |
-|   - 海外市场分析、竞品调研                                           |
-|   - 广交会翻译、海外商务谈判                                         |
-|                                                                       |
-| ③ 揭阳日报社 | 实习记者/采编 | 2024.12-2025.02                       |
-|   - 活动跟拍、照片见报                                               |
-|   - 人物采访、通讯稿撰写                                             |
-|   - 新闻稿、现场活动报道                                             |
-+-----------------------------------------------------------------------+
+<!-- 实习经历 -->
+<section id="experience" class="section-card">
+  <h2>实习经历</h2>
+  <p><strong>深圳华大基因</strong> ｜ 电商运营 · 海外宣发 · 社群运营5000+ · GMV 100万+</p>
+  <p><strong>揭阳海联五金</strong> ｜ 产品拍摄 · 企业宣传片 · 海外独立站设计</p>
+  <p><strong>揭阳日报社</strong> ｜ 新闻采编 · 人物采访 · 现场报道</p>
+</section>
 
-+-----------------------------------------------------------------------+
-| 【校园经历 - 新增完整模块】                                          |
-| 1. 广东以色列理工学院 | 双语内容策划 | 2025.05-至今                   |
-|    运营公众号、双语海报/推文制作、内容优化                            |
-|                                                                       |
-| 2. 校新媒体中心主席团 | 官微运营 | 2020.10-2023.09                    |
-|    统筹全平台、活动拍摄、校友采访；统筹推文60+篇，25篇阅读破1万       |
-|                                                                       |
-| 3. 外文学院新媒体 | 采编总负责人 | 2021.09-2023.09                    |
-|    文稿编辑、采访稿、新闻稿撰写、校对                                 |
-|                                                                       |
-| 4. 学生党支部 | 宣传委员 | 2023.09-2024.06                            |
-|    新闻稿、拍摄剪辑、双语微党课栏目策划                               |
-|                                                                       |
-| 5. 三下乡 | 领队/宣传组长 | 2022&2023                                 |
-|    活动统筹、推文/视频全流程制作                                      |
-+-----------------------------------------------------------------------+
+<!-- 作品集 -->
+<section id="portfolio" class="section-card">
+  <h2>作品集</h2>
+  <div class="grid">
+    <div class="portfolio-item" onclick="window.open('https://mp.weixin.qq.com/s/RaN9p6duKdm6lsIKPV_1HA','_blank')">
+      <p>高校官媒作品 ①</p>
+    </div>
+    <div class="portfolio-item" onclick="window.open('https://mp.weixin.qq.com/s/OJ9bZtBX9ofxcMonGL9Ryw','_blank')">
+      <p>高校官媒作品 ②</p>
+    </div>
+    <div class="portfolio-item" onclick="window.open('https://mp.weixin.qq.com/s/FMbRYjYMAXp_yjEHU9a69w','_blank')">
+      <p>高校官媒作品 ③</p>
+    </div>
+    <div class="portfolio-item" onclick="window.open('https://mp.weixin.qq.com/s/Kuf5-08vTBdwWDvxGRU-ng','_blank')">
+      <p>双语推文排版 ①</p>
+    </div>
+    <div class="portfolio-item" onclick="window.open('https://mp.weixin.qq.com/s/4AvF-3W4FIumfmANdzXrMw','_blank')">
+      <p>双语推文排版 ②</p>
+    </div>
+    <div class="portfolio-item" onclick="window.open('https://mp.weixin.qq.com/s/cqC2HDrtVApak1ypcJKjNw','_blank')">
+      <p>双语推文排版 ③</p>
+    </div>
+    <div class="portfolio-item" onclick="window.open('https://mp.weixin.qq.com/s/p8KJe2xtU0IDlPLdRXCnuw','_blank')">
+      <p>报社作品 ①</p>
+    </div>
+    <div class="portfolio-item" onclick="window.open('https://mp.weixin.qq.com/s/vlqeZbHYViEKlp5sZurIig','_blank')">
+      <p>报社作品 ②</p>
+    </div>
+    <div class="portfolio-item" onclick="window.open('https://mp.weixin.qq.com/s/SlhGLEL961S7RmUwLDnDHA','_blank')">
+      <p>报社作品 ③</p>
+    </div>
+  </div>
+</section>
 
-+-----------------------------------------------------------------------+
-| 【作品集 - 点击预览】                                                 |
-|   [公众号推文]  [海报设计]  [新闻采访]  [产品拍摄]  [宣传视频]        |
-|           点击 → 弹出大图 / 跳转外链 / 显示二维码                      |
-+-----------------------------------------------------------------------+
+<!-- 联系 -->
+<section id="contact" class="contact">
+  <h2>联系我</h2>
+  <p>📞 <a href="tel:18948374802">18948374802</a></p>
+  <p>📧 <a href="mailto:24hcai@stu.edu.cn">24hcai@stu.edu.cn</a></p>
+</section>
 
-+-----------------------------------------------------------------------+
-| 【联系我】                                                            |
-| 电话：18948374802      → 点击拨号                                    |
-| 邮箱：24hcai@stu.edu.cn → 点击发邮件                                  |
-| 求职意向：新媒体运营 | 海外市场营销 | 内容运营 | 品牌推广             |
-+-----------------------------------------------------------------------+
-
-+-----------------------------------------------------------------------+
-| 【底部 - 返回顶部】                                                   |
-| © 蔡杭 2026 | 新媒体·海外营销·内容运营 | ↑ 返回顶部                   |
-+-----------------------------------------------------------------------+
-</pre>
+<footer>
+  © Cai Hang 2026 | All Rights Reserved
+</footer>
 
 </body>
 </html>
